@@ -1,0 +1,76 @@
+//  Liquid Grid
+//  Author: Atom Groom
+//  Version: 1.0
+
+// Imports
+@import "normalize.less";
+@import "variables.less";
+@import "mixins.less";
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.row {
+  .clearfix;
+}
+.col {
+  .pull-left;
+  background: tomato;
+  border: 1px solid white;
+  // Media 
+  img, object, embed, iframe {
+    max-width: 100%;
+  }
+  img {
+    height: auto;
+  }  
+}
+// Center Column
+.col--centered{
+    float: none;
+    margin: 0 auto;
+}
+.reset {
+  margin:0;
+  padding:0;
+}
+.video-container,
+.google-maps {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  iframe {
+      .responsive-media;
+  }   
+}
+.video-container {
+    padding-bottom: 56.25%;
+    padding-top: 35px; 
+}
+.google-maps {
+    padding-bottom: 90%;
+}
+// Floats 
+.pull-left {
+  float: left;
+ }
+.pull-right {
+  float: right;
+ }
+ 
