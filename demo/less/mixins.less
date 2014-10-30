@@ -1,0 +1,30 @@
+// grid mixins
+.grid-column(@columns, @total) {
+    // width: percentage(@columns / @total) - ((@total - 1) - (100% * .012));
+    width: percentage(@columns / @total);
+  .col;
+}
+// grid helpers 
+.b-padding--horz (@left, @right) {
+  padding-left: @left;
+  padding-right: @right;
+}
+.b-padding--vert(@top, @bottom) {
+  padding-top: @top;
+  padding-bottom: @bottom;
+}
+.responsive-media {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+// Vertical Align 
+.vertical-align {
+  display: table;
+  > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

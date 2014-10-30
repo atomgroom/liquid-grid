@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Liquid-grid by atomgroomdesign</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/liquid-grid-favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/liquid-grid-favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="liquid-grid-favicon.png">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -15,11 +17,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Test</h1>
-        <p>The responsive grid with no defined container size - full width.</p>
-
+        <img src="img/Liquid-Grid-Logo.png" />
         <p class="view"><a href="https://github.com/atomgroomdesign/liquid-grid">View the Project on GitHub <small>atomgroomdesign/liquid-grid</small></a></p>
-
 
         <ul>
           <li><a href="https://github.com/atomgroomdesign/liquid-grid/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -28,42 +27,118 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Liquid Grid<small> - A grid with no constraints.</small></h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>The Liquid Grid system was to designed fill the viewport and to flex evenly with it. Rather than definining random breakpoints or set widths, Liquid Grid aims get rid of the entire idea of fixed layouts. Liquid Grid might also be an alternative to those who don't want to use Flexbox, yet.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>Liquid Grid is a <em>side project</em> of <a href="http://www.atomgroom.com">Atom Groom</a>. I will to the best of my ability work to fix bugs and support requests.  As an open-source project you are highly encouraged to contribute to the project.  I wrote a <a href="http://www.atomgroom.com/thoughts/the-return-of-full-width-design" target="_blank">blog article</a> about this vision.  Please read it to ensure your contributions and requests are inline with the goals of this project.</p>
+
+<p>Liquid Grid highlights:</p>
+<ul>
+  <li>Uses LESS</li>
+  <li>Percentage based layout.</li>
+  <li>Semantic mixins - you decide the column ratios</li>
+  <li>Nestable</li>
+  <li>Unlimited Columns</li>
+  <li>You control breakpoints</li>
+  <li>Check out a <a href="/demo/">live demo here</a>.</li>
+</ul>
+
+<hr>
+
+<h3>Project Setup</h3>
+  <ul>
+    <li>Download or clone Liquid Grid LESS files locally</li>
+    <li>Setup the LESS Build (your choice on how you do this - Grunt, Gulp, CDN JS, etc.)</li>
+    <li>Include the compiled LESS or CSS in your project's < head > </li>
+    <li>Start coding!</li>
+  </ul>
+<hr>
+
+<h3>Example LESS Mixin Use:</h3>
+<p>In the first value we define amount of columns in a row.  In the second value we define the total amount of colums in the row.  In this case, 1 &divide; 2 = 50%</p>
+<pre><code>.class-name {
+  .grid-column(1,2);
+}
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h3>Example Markup:</h3>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+    &lt;section class=&quot;class-name&quot;&gt;&lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<hr>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<h3>Other Goodies</h3>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<h4>Grid Helpers</h4>
+<p>I have worked with a lot of different grid systems and one thing that I did not like is padding implementations. I discovered that I could easily make a mixin with variables and then add that semantically to each class as needed.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>I found that any particular site or app that I was working on had similar uses of padding throughout project.  Therefore, rather than repeating myself I could implement a set of variables with a mixin. This then speeds my work flow and the overall consistency of spacing.</p>
+<h4>Example LESS:</h4>
+<pre><code>.class-name {
+  .grid-column(1,2);
+  .b-padding--horz(@grid-max-value,@grid-max-value); // left,right
+  .b-padding--vert(@grid-min-value,@grid-min-value); // top, bottom
+}
+</code></pre>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<h4>Vertical Centering</h4>
+<p>Add the mixin as displayed below. I use the display: table and table cell technique to achieve vertical centering. </p>
+<pre><code>.class-name {
+  .vertical-align;
+}
+</code></pre>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h4>Horizontal Centering</h4>
+<p>Add the mixin as displayed below. </p>
+<pre><code>.class-name {
+  .col--centered;
+}
+</code></pre>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<hr>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<h3>Media</h3>
+
+<h4>Images</h4>
+<p>By placing an image within any of your markup that uses a grid mixin the image will automatically fill and flex with the width of the column.</p>
+<pre><code>&lt;section class=&quot;class-name&quot;&gt;
+  &lt;img src=&quot;http://placehold.it/350x150&quot;&gt;
+&lt;/section&gt;
+</code></pre>
+
+<h4>Video</h4>
+<p>To insert a flexible video into a column, place a containing DIV around the embeded iframe with the class "video-container".</p>
+<pre><code>&lt;section class=&quot;class-name&quot;&gt;
+  &lt;div class=&quot;video-container&quot;&gt;
+      &lt;iframe src=&quot;&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+<h4>Google Maps</h4>
+<p>To insert a flexible Google Map into a column, place a containing DIV around the embeded iframe with the class "google-maps".</p>
+<pre><code>&lt;section class=&quot;class-name&quot;&gt;
+  &lt;div class=&quot;google-maps&quot;&gt;
+      &lt;iframe src=&quot;&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+<hr>
+
+<h3>Awesome GIF Demo</h3>
+<img src="/img/liquid-grid-screencast.gif" alt="screen cast demo of liquid grid" />
+
+<hr>
+
+<h3>Live Demo</h3>
+Check out a <a href="/demo/">live demo here</a>.
+
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/atomgroomdesign">atomgroomdesign</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
     
