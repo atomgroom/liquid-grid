@@ -108,6 +108,9 @@ section section {
 .col--1-of-2 {
   .grid-column(1,2);
   .b-padding--horz(@grid-max-value,@grid-max-value);
+  @media(max-width:@breakpoint-xs){
+    .grid-column(1,1);
+  }
 }
 
 // Three Columns 

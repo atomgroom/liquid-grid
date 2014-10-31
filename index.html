@@ -73,6 +73,17 @@
 
 <h3>Other Goodies</h3>
 
+<h4>Breakpoints</h4>
+<p>Use a media query as mixin with the variables that I have setup to create your own unique set of breakpoints, per element. You can adjust the variables that I setup in the variables.less file. </p>
+<pre><code>.class-name {
+    .grid-column(1,2);
+    @media(max-width:@breakpoint-xs){
+      .grid-column(1,1);
+    }
+}
+</code></pre>
+
+
 <h4>Grid Helpers</h4>
 <p>I have worked with a lot of different grid systems and one thing that I did not like is padding implementations. I discovered that I could easily make a mixin with variables and then add that semantically to each class as needed.</p>
 
