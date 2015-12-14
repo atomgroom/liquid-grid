@@ -1,5 +1,5 @@
 
-![](http://atomgroomdesign.github.io/liquid-grid/img/Liquid-Grid-Logo.png)
+![](http://atomgroom.github.io/liquid-grid/img/Liquid-Grid-Logo.png)
 
 # Liquid Grid - A grid with no constraints.
 
@@ -14,16 +14,16 @@ The Liquid Grid highlights:
 *   Semantic mixins - you decide the column ratios
 *   Nestable
 *   You control breakpoints
-*   Check out a [live demo here](http://atomgroomdesign.github.io/liquid-grid/demo/).
+*   Check out a [live demo here](http://atomgroom.github.io/liquid-grid/demo/).
 
 
 * * *
 
-### Project Setup 
+### Project Setup
 
 * Clone or download Liquid Grid LESS files locally
 * Setup LESS Build (your choice on how you do this - Grunt, Gulp, CDN JS, etc.)
-* Include the compiled LESS or CSS in your project's < head > 
+* Include the compiled LESS or CSS in your project's < head >
 * Start coding!
 
 * * *
@@ -80,7 +80,7 @@ I found that any particular site or app that I was working on had similar uses o
 
 #### Vertical Centering
 
-Add the mixin as displayed below. I use the display: table and table cell technique to achieve vertical centering. 
+Add the mixin as displayed below. I use the display: table and table cell technique to achieve vertical centering.
 
 ```
 .class-name {
@@ -90,7 +90,7 @@ Add the mixin as displayed below. I use the display: table and table cell techni
 
 #### Horizontal Centering
 
-Add the mixin as displayed below. 
+Add the mixin as displayed below.
 
 ```
 .class-name {
@@ -140,14 +140,14 @@ To insert a flexible Google Map into a column, place a containing DIV around the
 
 ### Awesome GIF Demo
 
-![screen cast demo of liquid grid](http://atomgroomdesign.github.io/liquid-grid/img/liquid-grid-screencast.gif)
+![screen cast demo of liquid grid](http://atomgroom.github.io/liquid-grid/img/liquid-grid-screencast.gif)
 
-This project is maintained by [atomgroomdesign](https://github.com/atomgroomdesign)
+This project is maintained by [atomgroom](https://github.com/atomgroom)
 
 * * *
 
 ### Live Demo
-Check out a [live demo here](http://atomgroomdesign.github.io/liquid-grid/demo/).
+Check out a [live demo here](http://atomgroom.github.io/liquid-grid/demo/).
 
 * * *
 
@@ -164,4 +164,3 @@ Copyright 2013 Atom Groom.
 
 Licensed under the MIT License:
 http://opensource.org/licenses/MIT
-    
